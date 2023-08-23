@@ -28,7 +28,8 @@
     </style>
 </head>
 <body>
-    <header>
+    <script src="typing-animation.js"></script> <!-- Add the typing animation script -->
+    <header class="header-container">
         <div class="container">
             <div class="typed-out" id="typing-title">Research</div>
         </div>
@@ -42,10 +43,21 @@
             </ul>
         </nav>
     </header>
+    <style>
+        /* Adjust the border size and center the content */
+        .content {
+            border: 1px solid limegreen;
+            border-radius: 5px;
+            /*padding: 10px;*/
+            margin: 80px auto; /* Center the content horizontally */
+            max-width: 900px; /* Adjust the max width as needed */
+        }
+
+    </style>
 
     <div class="scroll-content">
 
-        <section class="content flicker-container">
+        <section class="content content-with-spacing flicker-container">
             <h2>Improved Automatic Instrumentation Role Classification and Structural Analysis for <br>Electronic Music Production</h2><br>
             <!-- <img src="./em-template.png" alt="Thumbnail" style="max-width: 100%; height: auto;"> -->
             <p>Modern loop-based electronic music (EM) is created through the activation of short audio recordings of instruments designed for seamless repetition—or loops. In this work, we aim to label loops into key structural groups such as bass, percussion or melodies by the role they occupy in a piece of music. For this, we use a task called automatic instrumentation role classification (AIRC).</p><br>
@@ -60,63 +72,125 @@
             <!-- ... (Rest of the content) ... -->
 
             <h2>Dataset</h2>
+            <style type="text/css">
+            .tg  {border-collapse:collapse;border-spacing:0;}
+            .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+              overflow:hidden;padding:10px 5px;word-break:normal;}
+            .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+              font-weight:bold;overflow:hidden;padding:10px 5px;word-break:normal;}
+            .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+            </style>
             <div class="table-container">
-              <table>
+                <table class="tg">
                 <thead>
                   <tr>
-                    <th>Title</th>
-                    <th>Artist</th>
-                    <th>Genre</th>
-                    <th>BPM</th>
-                    <th>Source</th>
-                    <th>Duration</th>
-                    <th>Annotations</th>
+                    <th class="tg-0pky">Title</th>
+                    <th class="tg-0pky">Artist</th>
+                    <th class="tg-0pky">Genre</th>
+                    <th class="tg-0pky">BPM</th>
+                    <th class="tg-0pky">Source</th>
+                    <th class="tg-0pky">Duration</th>
+                    <th class="tg-0pky">Annotations</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Come On Let’s Go</td>
-                    <td>Le Gang</td>
-                    <td>Hip Hop</td>
-                    <td>154</td>
-                    <td><a href="https://soundcloud.com/thisislegang/come-on-lets-go">Soundcloud</a></td>
-                    <td>02:26</td>
-                    <td><a href="./annotations/0_role_activations.npy">Download</a></td>
+                    <td class="tg-0pky">Come On Let’s Go</td>
+                    <td class="tg-0pky">Le Gang</td>
+                    <td class="tg-0pky">Hip Hop</td>
+                    <td class="tg-0pky">154</td>
+                    <td class="tg-0pky"><a href="https://soundcloud.com/thisislegang/come-on-lets-go">Soundcloud</a></td>
+                    <td class="tg-0pky">02:26</td>
+                    <td class="tg-0pky"><a href="./annotations/0_role_activations.npy">Download</a></td>
+
                   </tr>
-                  <!-- Add more rows as needed -->
+                  <tr>
+                    <td class="tg-0pky">Rap Instrumental (Eminem Type Beat)</td>
+                    <td class="tg-0pky">Rick Da Sauce</td>
+                    <td class="tg-0pky">Hip Hop</td>
+                    <td class="tg-0pky">172</td>
+                    <td class="tg-0pky"><a href="https://soundcloud.com/rickdasauce/rap-instrumental-eminem-type">Soundcloud</a></td>
+                    <td class="tg-0pky">03:10</td>
+                    <td class="tg-0pky"><a href="./annotations/1_role_activations.npy">Download</a></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">Fear Bomb</td>
+                    <td class="tg-0pky">Skorpion</td>
+                    <td class="tg-0pky">DnB</td>
+                    <td class="tg-0pky">170</td>
+                    <td class="tg-0pky"><a href="https://soundcloud.com/n-e-u-r-o-d-n-b/skorpion-fear-bomb-neurodnb">Soundcloud</a></td>
+                    <td class="tg-0pky">03:51</td>
+                    <td class="tg-0pky"><a href="./annotations/2_role_activations.npy">Download</a></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">The Way It Is</td>
+                    <td class="tg-0pky">Sonido Berzerk</td>
+                    <td class="tg-0pky">Garage</td>
+                    <td class="tg-0pky">140</td>
+                    <td class="tg-0pky"><a href="https://sonidoberzerk1.bandcamp.com/track/the-way-it-is">Bandcamp</a></td>
+                    <td class="tg-0pky">04:13</td>
+                    <td class="tg-0pky"><a href="./annotations/3_role_activations.npy">Download</a></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">I Don’t Need U 2 Say Anything</td>
+                    <td class="tg-0pky">Le Gang</td>
+                    <td class="tg-0pky">Hip Hop</td>
+                    <td class="tg-0pky">136</td>
+                    <td class="tg-0pky"><a href="https://soundcloud.com/thisislegang/i-dont-need-u-2-say-anything">Soundcloud</a></td>
+                    <td class="tg-0pky">02:23</td>
+                    <td class="tg-0pky"><a href="./annotations/4_role_activations.npy">Download</a></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">Robinson Jr.</td>
+                    <td class="tg-0pky">Stoertebeker</td>
+                    <td class="tg-0pky">House</td>
+                    <td class="tg-0pky">126</td>
+                    <td class="tg-0pky"><a href="https://digitaldiamonds.bandcamp.com/track/robinson-jr">Bandcamp</a></td>
+                    <td class="tg-0pky">06:13</td>
+                    <td class="tg-0pky"><a href="./annotations/5_role_activations.npy">Download</a></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">Neuroluminescence</td>
+                    <td class="tg-0pky">Medular</td>
+                    <td class="tg-0pky">Psytrance</td>
+                    <td class="tg-0pky">128</td>
+                    <td class="tg-0pky"><a href="https://digitaldiamonds.bandcamp.com/track/neuroluminescence">Bandcamp</a></td>
+                    <td class="tg-0pky">09:25</td>
+                    <td class="tg-0pky"><a href="./annotations/6_role_activations.npy">Download</a></td>
+      
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">Slow It Down</td>
+                    <td class="tg-0pky">Aztek, Prinsh</td>
+                    <td class="tg-0pky">House (EDM)</td>
+                    <td class="tg-0pky">124</td>
+                    <td class="tg-0pky"><a href="https://soundcloud.com/djprinsh/aztek-prinsh-slow-it-down-original-mix-so-track-boa">Soundcloud</a></td>
+                    <td class="tg-0pky">05:48</td>
+                    <td class="tg-0pky"><a href="./annotations/7_role_activations.npy">Download</a></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">East</td>
+                    <td class="tg-0pky">Chump Change</td>
+                    <td class="tg-0pky">Jungle</td>
+                    <td class="tg-0pky">160</td>
+                    <td class="tg-0pky"><a href="https://yarnaudio.bandcamp.com/track/east-feat-deserved">Bandcamp</a></td>
+                    <td class="tg-0pky">04:04</td>
+                    <td class="tg-0pky"><a href="./annotations/8_role_activations.npy">Download</a></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">Minotauro</td>
+                    <td class="tg-0pky">Langax</td>
+                    <td class="tg-0pky">Acid</td>
+                    <td class="tg-0pky">119</td>
+                    <td class="tg-0pky"><a href="https://soisloscerdos.bandcamp.com/track/minotauro">Bandcamp</a></td>
+                    <td class="tg-0pky">04:42</td>
+                    <td class="tg-0pky"><a href="./annotations/9_role_activations.npy">Download</a></td>
+                  </tr>
                 </tbody>
-              </table>
+                </table>
             </div>
 
-            <style>
-              /* Style the table container */
-              .table-container {
-                overflow-x: auto; 
-              }
 
-              /* Style the table */
-              table {
-                width: 100%;
-                border-collapse: collapse;
-                border-spacing: 0;
-                display: grid;
-                grid-template-columns: repeat(7, 1fr); /* Define grid columns */
-                grid-gap: 10px; /* Adjust spacing between cells */
-              }
-
-              /* Style table header */
-              thead th {
-                background-color: #000;
-                border: 1px solid #ddd;
-                padding: 8px;
-              }
-
-              /* Style table cells */
-              tbody td {
-                border: 1px solid #ddd;
-                padding: 8px;
-              }
-            </style>
         </section>
 
     </div>
