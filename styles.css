@@ -129,16 +129,27 @@ footer {
     padding: 20px;
     margin: 20px;
     border: 1px solid limegreen;
+    max-width: 100; /* Set the maximum width you want for the section */
     border-radius: 5px;
 }
 
+/*
+.matrix-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0px; 
+}*/
 
 .matrix-section {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 40px; /* Add margin between sections if needed */
+    margin-bottom: 0px; /* Add margin between sections if needed */
+    max-width: 100; /* Set the maximum width you want for the section */
+    margin: 0 auto; /* Center the section horizontally */
 }
+
 
 .matrix-left-column {
     flex: 1;
@@ -169,10 +180,10 @@ footer {
 }
 
 .matrix-screenshot img {
-    max-width: 70%;
+    max-width: 90%;
     height: auto;
     border: 2px solid limegreen;
-    margin-left: 80px;
+    margin-left: 0px;
 }
 
 .matrix-screenshot {
