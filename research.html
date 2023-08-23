@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Research</title>
+    <script src="typing-animation.js"></script> <!-- Add the typing animation script -->
+    <style>
+        .flicker-container {
+            animation: flicker 1.5s linear infinite;
+            animation-play-state: running;
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.9;
+            }
+        }
+
+        .stop-flicker {
+            animation-play-state: paused;
+            opacity: 1; /* Set opacity to 1 when animation is paused */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="typed-out" id="typing-title">Research</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools.html">Production Tools</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="scroll-content">
+
+        <section class="content flicker-container">
+            <h2>Improved Automatic Instrumentation Role Classification and Structural Analysis for <br>Electronic Music Production</h2><br>
+            <!-- <img src="./em-template.png" alt="Thumbnail" style="max-width: 100%; height: auto;"> -->
+            <p>Modern loop-based electronic music (EM) is created through the activation of short audio recordings of instruments designed for seamless repetition—or loops. In this work, we aim to label loops into key structural groups such as bass, percussion or melodies by the role they occupy in a piece of music. For this, we use a task called automatic instrumentation role classification (AIRC).</p><br>
+            
+            <h2>Methodology</h2>
+            <p>The aim is to classify the instrumentation roles of audio loops automatically. Instead of trying to find relevant characteristics of each class for this classification, a a data-driven approach is adopted, where deep-learning models can learn these relevant characteristics from the data itself.</p><br>
+            <!-- ... (Rest of the content) ... -->
+
+            <h2>Analysing the Structure of Loop-based Electronic Music</h2>
+            <img src="./om-unit.png" alt="Joyspark IRAM">
+            <p>The model developed to classify the instrumentation roles of loops can easily be adapted to classify the loops of an EM composition...</p><br>
+            <!-- ... (Rest of the content) ... -->
+
+            <h2>Dataset</h2>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Genre</th>
+                    <th>BPM</th>
+                    <th>Source</th>
+                    <th>Duration</th>
+                    <th>Annotations</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Come On Let’s Go</td>
+                    <td>Le Gang</td>
+                    <td>Hip Hop</td>
+                    <td>154</td>
+                    <td><a href="https://soundcloud.com/thisislegang/come-on-lets-go">Soundcloud</a></td>
+                    <td>02:26</td>
+                    <td><a href="./annotations/0_role_activations.npy">Download</a></td>
+                  </tr>
+                  <!-- Add more rows as needed -->
+                </tbody>
+              </table>
+            </div>
+
+            <style>
+              /* Style the table container */
+              .table-container {
+                overflow-x: auto; 
+              }
+
+              /* Style the table */
+              table {
+                width: 100%;
+                border-collapse: collapse;
+                border-spacing: 0;
+                display: grid;
+                grid-template-columns: repeat(7, 1fr); /* Define grid columns */
+                grid-gap: 10px; /* Adjust spacing between cells */
+              }
+
+              /* Style table header */
+              thead th {
+                background-color: #000;
+                border: 1px solid #ddd;
+                padding: 8px;
+              }
+
+              /* Style table cells */
+              tbody td {
+                border: 1px solid #ddd;
+                padding: 8px;
+              }
+            </style>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Jake Drysdale.</p>
+    </footer>
+
+</body>
+</html>
+
+

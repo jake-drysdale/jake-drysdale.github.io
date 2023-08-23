@@ -1,0 +1,211 @@
+/* Reset default margin and padding */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Set body font and background color */
+body {
+    font-family: "Courier New", monospace;
+    background-color: black;
+    color: limegreen;
+}
+
+/* Header styles */
+header {
+    background-color: black;
+    color: limegreen;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed; /* Fixed header */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header-container {
+    background-color: black;
+    padding: 10px; /* Adjust as needed */
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: limegreen;
+}
+
+.content {
+    background-color: black;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid limegreen;
+    border-radius: 5px;
+}
+
+/* Additional spacing for content sections under fixed header */
+.content-with-spacing {
+    margin-top: 150px; /* Add margin-top to create space under the fixed header */
+    padding-left: 40px; /* Adjust this value to nudge the content to the right */
+}
+
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    /*background-color: black;*/
+    background-color: rgba(0, 0, 0, 0.0); /* Change the alpha value (0.5) to adjust transparency */
+    color: limegreen;
+}
+
+/* Additional styles */
+.container {
+    display: inline-block;
+}
+
+.typed-out {
+    overflow: hidden;
+    border-right: .15em solid limegreen;
+    white-space: nowrap;
+    animation: typing 2.3s forwards, blink 1s infinite alternate;
+    font-size: 2.0rem;
+    font-weight: bold;
+    width: 0;
+    padding-right: 2px; /* Add padding to the right to nudge the cursor */
+}
+
+
+
+/*    flex: 1;
+    padding-right: 40px;
+    color: limegreen;
+    font-size: 16px;
+    line-height: 1.5;*/
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    to { border-color: transparent; }
+}
+
+/* Scroll content styles */
+.scroll-content {
+    padding-top: 130px; /* Adjust as needed for spacing under the fixed header */
+    overflow-y: scroll; /* Enable scrolling for the container */
+    height: 100vh; /* Set the height to the viewport height */
+}
+
+.content-box {
+    background-color: black;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid limegreen;
+    border-radius: 5px;
+}
+
+
+.matrix-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px; /* Add margin between sections if needed */
+}
+
+.matrix-left-column {
+    flex: 1;
+    padding: 0 20px; /* Add padding to separate columns */
+    border-right: 1px solid limegreen;
+}
+.matrix-right-column {
+    flex: 1;
+    padding: 0 20px; /* Add padding to separate columns */
+}
+
+
+.matrix-text {
+    flex: 1;
+    padding-left: 20px; /* Adjust this value to nudge the content to the right */
+    padding-right: 40px;
+}
+
+
+.matrix-text h2 {
+    color: limegreen;
+    font-size: 24px;
+}
+
+.matrix-text p {
+    color: limegreen;
+    font-size: 16px;
+}
+
+.matrix-screenshot img {
+    max-width: 70%;
+    height: auto;
+    border: 2px solid limegreen;
+    margin-left: 80px;
+}
+
+.matrix-screenshot {
+    margin-top: 50px; /* Adjust the value as needed */
+    margin-bottom: 40px; /* Adjust the value as needed */
+}
+
+.matrix-intro {
+    flex: 1;
+    padding-right: 40px;
+    color: limegreen;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.matrix-intro p {
+    margin-bottom: 20px;
+    margin-top: 12px;
+}
+
+
+.matrix-text ul {
+    margin-top: 20px; /* Adjust this value to control the spacing */
+}
+
+
+body.stop-flicker {
+    animation-play-state: paused;
+}
+
+.flicker-container {
+    animation: flicker 5s linear infinite;
+    animation-play-state: running;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+
+

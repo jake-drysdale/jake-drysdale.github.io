@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Jake Drysdale</title>
+    <script src="typing-animation.js"></script> <!-- Add the typing animation script -->
+    <style>
+        .flicker-container {
+            animation: flicker 2.5s linear infinite;
+            animation-play-state: running;
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.9;
+            }
+        }
+
+        .stop-flicker {
+            animation-play-state: paused;
+            opacity: 1; /* Set opacity to 1 when animation is paused */
+        }
+    </style>
+
+</head>
+<body>
+    <script src="typing-animation.js"></script> <!-- Add the typing animation script -->
+    <header class="header-container">
+        <div class="container">
+            <div class="typed-out" id="typing-title">Production Tools</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools.html">Production Tools</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="scroll-content">
+        <div class="content">
+            <div class="flicker-container">
+                <section class="matrix-section">
+                        <div class="matrix-left-column">
+                            <div class="matrix-intro">
+                                <h2>Neural Drum Synth</h2>
+                                <p>This project utilises a machine learning technique known as a generative adversarial network (GAN), trained on a dataset of drum samples that includes kicks, snares, and cymbals.</p>
+                            </div>
+                            <div class="matrix-screenshot">
+                                <img src="nds_screenshot.png" alt="GUI Screenshot">
+                            </div>
+                            <div class="matrix-intro">
+                                <p>Follow <a href="https://github.com/jake-drysdale/neuraldrumsynth_gui" style="color: red;">this link</a> for the GitHub repository containing code, dependencies, pre-trained model weights, and an installation guide.</p>
+                            </div>
+                        </div>
+                        <div class="matrix-right-column">
+                            <div class="matrix-text">
+                                <h2>GUI Features</h2>
+                                    <ul>
+                                        <li><strong>Drum type selection:</strong><br>Choose between kick, snare, and cymbal sounds. This is achieved by training the generative model with class labels during its development.</li>
+                                        <li><strong>Drum space:</strong><br>An interactive 2D pad allows you to explore drum sounds. Similar sounds are closer together on the pad. This arrangement is created using a dimensionality reduction technique called UMAP applied to the latent distribution.</li>
+                                        <li><strong>Morphing parameters:</strong><br>Fine-tune and create variations in the drum sounds using a set of synthesizer parameters. These parameters are identified through Principal Component Analysis (PCA) to find directions in the latent space.</li>
+                                        <li><strong>Layer select:</strong><br>Further refine the sound by selecting which layers of the network will be influenced by Drum space and Morphing parameters. Each layer affects different aspects of the sound, and you can control them independently.</li>
+                                        <li><strong>Amplitude:</strong><br>Adjust the overall volume level of the generated sound.</li>
+                                        <li><strong>Pitch:</strong><br>Alter the pitches of the drum sounds, changing the playback rate, plotting, and saving accordingly.</li>
+                                        <li><strong>Noise:</strong><br>Add subtle variations to each generated sound. At maximum, it mimics analog synthesizers, providing uniqueness in each generation. When minimized, the generations become more consistent.</li>
+                                        <li><strong>Random seed:</strong><br>Generate a random drum sound that you can manipulate using the Morphing parameters. This samples the latent space randomly.</li>
+                                        <li><strong>Blend Seed:</strong><br>Blend between the random seed and the UMAP space. This allows you to smoothly transition between a completely random sound and one guided by the UMAP vector.</li>
+                                        <li><strong>Play:</strong><br>Play back the generated audio.</li>
+                                        <li><strong>Save:</strong><br>Save the audio to a designated folder for your future use.</li>
+                                    </ul>
+                            </div>
+                        </div>
+                </section>
+            </div>
+        </div>
+
+        <section class="content">
+            <h2>Production Tools</h2>
+            <p>
+                Write a brief description about yourself and your research interests... 
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+            </p>
+        </section>
+
+        <section class="content">
+            <h2>Production Tools</h2>
+            <p>
+                Write a brief description about yourself and your research interests... 
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+            </p>
+        </section>
+
+        <section class="content">
+            <h2>Production Tools</h2>
+            <p>
+                Write a brief description about yourself and your research interests... 
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+                Write a brief description about yourself and your research interests...
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Jake Drysdale.</p>
+    </footer>
+<!--     <script>
+        setTimeout(() => {
+            document.querySelectorAll('.flicker-container').forEach((element) => {
+                element.classList.add('stop-flicker');
+            });
+        }, 5000); // 3000 milliseconds = 3 seconds
+    </script> -->
+</body>
+</html>
