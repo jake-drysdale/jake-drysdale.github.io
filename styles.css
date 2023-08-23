@@ -213,6 +213,23 @@ a {
 }
 
 
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .matrix-section {
+        flex-direction: column; /* Stack content vertically */
+        align-items: stretch; /* Stretch items to full width */
+    }
+
+    .matrix-left-column,
+    .matrix-right-column,
+    .matrix-text {
+        flex: none; /* Reset the flex property to prevent columns from taking up equal space */
+        padding: 10px; /* Add padding to separate rows */
+        border: none; /* Remove borders */
+    }
+}
+
+
 body.stop-flicker {
     animation-play-state: paused;
 }
