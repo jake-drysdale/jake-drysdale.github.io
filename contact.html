@@ -4,29 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>About Me</title>
+    <title>Contact</title>
+    <script src="typing-animation.js"></script> <!-- Add the typing animation script -->
+    <style>
+        .flicker-container {
+            animation: flicker 1.5s linear infinite;
+            animation-play-state: running;
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.9;
+            }
+        }
+
+        .stop-flicker {
+            animation-play-state: paused;
+            opacity: 1; /* Set opacity to 1 when animation is paused */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Contact</h1>
+        <div class="container">
+            <div class="typed-out" id="typing-title">Contact</div>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="tools.html">Producction Tools</a></li>
+                <li><a href="tools.html">Production Tools</a></li>
                 <li><a href="research.html">Research</a></li>
                 <li><a href="music.html">Music</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
+    <style>
+        /* Adjust the border size and center the content */
+        .content {
+            border: 1px solid limegreen;
+            border-radius: 5px;
+            /*padding: 10px;*/
+            margin: 150px auto; /* Center the content horizontally */
+            max-width: 800px; /* Adjust the max width as needed */
+        }
 
-    <section class="content">
+    </style>
+    <section class="content content-with-spacing flicker-container"> <!-- Add the flicker-container class here -->
+
         <h2>Contact</h2>
-        <p>Write a brief description about yourself and your research interests...</p>
+        <p>
+            Contact links...
+        </p>
     </section>
+    <div class="gif-container">
+        <img src="./gan_gen.gif" alt="generating drums">
+    </div>
 
+<!--     <section class="content flicker-container"> 
+        <h2>Projects</h2>
+        <p>Here are some of my recent projects...</p>
+    </section>
+ -->
     <footer>
-        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+        <p>&copy; 2023 Jake Drysdale.</p>
     </footer>
+    <script>
+        setTimeout(() => {
+            document.querySelectorAll('.flicker-container').forEach((element) => {
+                element.classList.add('stop-flicker');
+            });
+        },3000); // 3000 milliseconds = 3 seconds
+    </script>
 </body>
 </html>
