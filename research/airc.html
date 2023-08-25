@@ -1,0 +1,172 @@
+<div class="project">
+
+    <section class="content content-with-spacing flicker-container">
+        <br>
+        <h2 class="project-title" style="text-align: center;">Improved Automatic Instrumentation Role Classification and Structural Analysis for Electronic Music Production</h2>
+        <p class="project-description"><br><br>Drysdale, J., Ramires, A., Serra, X. and Hockman, J. 2022. Improved Automatic Instrumentation Role Classification and Loop Activation Transcription, in <em>in Proceedings of the International Conference on Digital Audio Effects (DAFX), Vienna, Austria</em>.
+        [<a href="https://www.dafx.de/paper-archive/2022/papers/DAFx20in22_paper_24.pdf">paper</a>]<br><br>
+        </p>
+        
+		<div class="project-details hidden">
+        <!-- <h2>Improved Automatic Instrumentation Role Classification and Structural Analysis for Electronic Music Production</h2><br> -->
+        <!-- <br> -->
+        <br>
+
+
+        <!-- <img src="./em-template.png" alt="Thumbnail" style="max-width: 80%; height: auto;"> -->
+        <!-- <img src="./om-unit.png" alt="Joyspark IRAM"> -->
+        <p>Modern loop-based electronic music (EM) is created through the activation of short audio recordings of instruments designed for seamless repetition—or loops. In this work, loops are labelled using key structural groups such as bass, percussion or melodies by the role they occupy in a piece of music. For this, automatic instrumentation role classification (AIRC) is used. <br><br> These labels assist EM producers in organizing and identifying compatible loops within large unstructured audio databases. While annotating the audio files by hand is hard work, automatic classification allows for fast and scalable generation of these labels. <br><br>
+        In this work, we experimented with several deep-learning architectures and proposed a data augmentation method which allowed us to reach a high-accuracy classification.<br><br>
+        Besides the obvious task of classifying instrumentation roles in large collections of loops, we evaluated how our model could be used for identifying the structure of electronic music compositions.</p><br>
+        
+        <h2>Methodology</h2>
+        <p>The aim is to classify the instrumentation roles of audio loops automatically. Instead of trying to find relevant characteristics of each class for this classification, a data-driven approach is adopted, where deep-learning models can learn these relevant characteristics from the data itself.<br><br> The first step to solve this problem is therefore to find good quality data (similar to the data we want to classify). The Freesound Loop Dataset (FSLD) comprises thousands of loops from freesound.org with annotations such as their tempo, key, genre and instrumentation roles. It arises as the ideal dataset to use for this task, due to its high-quality professional data, the exact instrumentation role labels and the Creative Commons licenses which are ideal for research.
+        <br><br>One disadvantage of this dataset is the lack of sufficient data with more than one instrumentation role, as half the loops only have one component. To tackle this, we turned on our music maker parts of the brain and decided on an approach: merging single component loops together by matching their tempo and key to create new examples. This enabled us to create a balanced dataset with 25000 loops, where each class is equally represented <br><br> The next step is selecting the appropriate deep-learning model for this task. A variety of architectures have been proposed for music classification tasks. We shortlisted the ones that, according to our intuition, would work best for the task, evaluated them and selected the best performing ones. After this, we experimented with slight modifications to the architectures, such as the use of different loss functions and pooling functions and chose the best performing model.</p><br>
+        <!-- ... (Rest of the content) ... -->
+
+        <h2>Analysing the Structure of Loop-based Electronic Music</h2>
+        <br>
+        <video controls>
+            <source src="./omunit_iram.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br>
+        <br>
+
+        <p>
+            The model we developed to classify the instrumentation roles of loops can easily be adapted to classify the loops of an EM composition. Knowing the tempo of a track, we chop it up into 4-bar consecutive segments which are fed to our model. The output is an instrumentation role activation map (IRAM), which exhibits how likely an instrumentation role is present in each 4 bars of a music piece. The video clip above presents an IRAM of the EM composition
+            <a href="https://omunit.bandcamp.com/track/joyspark-bandcamp-exclusive">Joyspark</a> (2020) by Om Unit using our proposed method for loop-based EM structure analysis.
+            For visualisation and comparison, we show a log-scaled STFT power spectrum of the EM composition above the IRAM.<br><br>
+            The IRAM allows us to visualise activations for each role over the duration of the EM composition, where each square is a measurement of four bars. Furthermore, we can see how each role develops throughout the EM composition. For example, the melody role activations progressively increase between bars 1--41, which corresponds with a synthesizer arpeggio that is gradually introduced by automating the cut-off frequency of a low-pass filter. Additionally, the chord role activations increase between bars 1--49 in correlation with the chords in this section that gradually increase in volume. Activations for the percussion role also correlate well with the composition as can be seen between bars 49--81 and 97--129---the only sections that contain percussion. Finally, the key structural sections of the composition are easily identifiable. For example, the introduction to the composition (bars 1--49) begins relatively sparse in the composition and IRAM; whereas, bars 49--81 and 97--129 are quite clearly the *core* of the piece---that is, the most energetic sections of the composition typically established by the <i>drop</i>.
+
+            </p><br>
+        <!-- ... (Rest of the content) ... -->
+
+        <h2>Evaluation Dataset</h2>
+        <p> 
+            In order to evaluate how well our system can analyze the structure of professionally produced EM, we compiled a dataset of 10 compositions. The dataset covers several popular EM genres such as hip-hop, drum and bass, techno, house and garage (with a tempo range of 120-175 BPM). The tracks were collected from Soundcloud and Bandcamp and are available under a Creative Commons license. Ground truth annotations were obtained by listening through each composition and labelling the active instrumentation roles at 4-bar intervals. The activations for each track can be downloaded via the corresponsing link and the roles are order as follows: Bass (0), Drums (1), FX (2), Melody (3).
+        </p>
+        <br><br>
+        <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          font-weight:bold;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+        </style>
+        <div class="table-container">
+            <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0pky">Title</th>
+                <th class="tg-0pky">Artist</th>
+                <th class="tg-0pky">Genre</th>
+                <th class="tg-0pky">BPM</th>
+                <th class="tg-0pky">Source</th>
+                <th class="tg-0pky">Duration</th>
+                <th class="tg-0pky">Annotations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-0pky">Come On Let’s Go</td>
+                <td class="tg-0pky">Le Gang</td>
+                <td class="tg-0pky">Hip Hop</td>
+                <td class="tg-0pky">154</td>
+                <td class="tg-0pky"><a href="https://soundcloud.com/thisislegang/come-on-lets-go">Soundcloud</a></td>
+                <td class="tg-0pky">02:26</td>
+                <td class="tg-0pky"><a href="./annotations/0_role_activations.npy">Download</a></td>
+
+              </tr>
+              <tr>
+                <td class="tg-0pky">Rap Instrumental (Eminem Type Beat)</td>
+                <td class="tg-0pky">Rick Da Sauce</td>
+                <td class="tg-0pky">Hip Hop</td>
+                <td class="tg-0pky">172</td>
+                <td class="tg-0pky"><a href="https://soundcloud.com/rickdasauce/rap-instrumental-eminem-type">Soundcloud</a></td>
+                <td class="tg-0pky">03:10</td>
+                <td class="tg-0pky"><a href="./annotations/1_role_activations.npy">Download</a></td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Fear Bomb</td>
+                <td class="tg-0pky">Skorpion</td>
+                <td class="tg-0pky">DnB</td>
+                <td class="tg-0pky">170</td>
+                <td class="tg-0pky"><a href="https://soundcloud.com/n-e-u-r-o-d-n-b/skorpion-fear-bomb-neurodnb">Soundcloud</a></td>
+                <td class="tg-0pky">03:51</td>
+                <td class="tg-0pky"><a href="./annotations/2_role_activations.npy">Download</a></td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">The Way It Is</td>
+                <td class="tg-0pky">Sonido Berzerk</td>
+                <td class="tg-0pky">Garage</td>
+                <td class="tg-0pky">140</td>
+                <td class="tg-0pky"><a href="https://sonidoberzerk1.bandcamp.com/track/the-way-it-is">Bandcamp</a></td>
+                <td class="tg-0pky">04:13</td>
+                <td class="tg-0pky"><a href="./annotations/3_role_activations.npy">Download</a></td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">I Don’t Need U 2 Say Anything</td>
+                <td class="tg-0pky">Le Gang</td>
+                <td class="tg-0pky">Hip Hop</td>
+                <td class="tg-0pky">136</td>
+                <td class="tg-0pky"><a href="https://soundcloud.com/thisislegang/i-dont-need-u-2-say-anything">Soundcloud</a></td>
+                <td class="tg-0pky">02:23</td>
+                <td class="tg-0pky"><a href="./annotations/4_role_activations.npy">Download</a></td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Robinson Jr.</td>
+                <td class="tg-0pky">Stoertebeker</td>
+                <td class="tg-0pky">House</td>
+                <td class="tg-0pky">126</td>
+                <td class="tg-0pky"><a href="https://digitaldiamonds.bandcamp.com/track/robinson-jr">Bandcamp</a></td>
+                <td class="tg-0pky">06:13</td>
+                <td class="tg-0pky"><a href="./annotations/5_role_activations.npy">Download</a></td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Neuroluminescence</td>
+                <td class="tg-0pky">Medular</td>
+                <td class="tg-0pky">Psytrance</td>
+                <td class="tg-0pky">128</td>
+                <td class="tg-0pky"><a href="https://digitaldiamonds.bandcamp.com/track/neuroluminescence">Bandcamp</a></td>
+                <td class="tg-0pky">09:25</td>
+                <td class="tg-0pky"><a href="./annotations/6_role_activations.npy">Download</a></td>
+  
+              </tr>
+              <tr>
+                <td class="tg-0pky">Slow It Down</td>
+                <td class="tg-0pky">Aztek, Prinsh</td>
+                <td class="tg-0pky">House (EDM)</td>
+                <td class="tg-0pky">124</td>
+                <td class="tg-0pky"><a href="https://soundcloud.com/djprinsh/aztek-prinsh-slow-it-down-original-mix-so-track-boa">Soundcloud</a></td>
+                <td class="tg-0pky">05:48</td>
+                <td class="tg-0pky"><a href="./annotations/7_role_activations.npy">Download</a></td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">East</td>
+                <td class="tg-0pky">Chump Change</td>
+                <td class="tg-0pky">Jungle</td>
+                <td class="tg-0pky">160</td>
+                <td class="tg-0pky"><a href="https://yarnaudio.bandcamp.com/track/east-feat-deserved">Bandcamp</a></td>
+                <td class="tg-0pky">04:04</td>
+                <td class="tg-0pky"><a href="./annotations/8_role_activations.npy">Download</a></td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Minotauro</td>
+                <td class="tg-0pky">Langax</td>
+                <td class="tg-0pky">Acid</td>
+                <td class="tg-0pky">119</td>
+                <td class="tg-0pky"><a href="https://soisloscerdos.bandcamp.com/track/minotauro">Bandcamp</a></td>
+                <td class="tg-0pky">04:42</td>
+                <td class="tg-0pky"><a href="./annotations/9_role_activations.npy">Download</a></td>
+              </tr>
+            </tbody>
+            </table>
+        </div>
+
+
+    </section>
+
+
+</div>

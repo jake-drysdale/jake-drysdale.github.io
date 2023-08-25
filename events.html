@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Events</title>
+    <script src="typing-animation.js"></script> <!-- Add the typing animation script -->
+    <style>
+        .flicker-container {
+            animation: flicker 1.5s linear infinite;
+            animation-play-state: running;
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.9;
+            }
+        }
+
+        .stop-flicker {
+            animation-play-state: paused;
+            opacity: 1; /* Set opacity to 1 when animation is paused */
+        }
+    </style>
+</head>
+<body>
+    <header class="header-container">
+        <div class="container">
+            <div class="typed-out" id="typing-title">Events</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools.html">Production Tools</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        /* Adjust the border size and center the content */
+        .content {
+            border: 1px solid limegreen;
+            border-radius: 5px;
+            /*padding: 10px;*/
+            margin: 200px auto; /* Center the content horizontally */
+            max-width: 800px; /* Adjust the max width as needed */
+        }
+
+    </style>
+    <section class="content content-with-spacing flicker-container"> <!-- Add the flicker-container class here -->
+
+        <h2>Upcoming Events</h2>
+        <br>
+        <br>
+
+        <div id='listing_widget_196897' style='width:80%'></div><script type='text/javascript' >(function (){var po=document.createElement('script'); po.type='text/javascript'; po.src='https://www.skiddle.com/infofeed/listing-widget/index.php?pid=196897&fetchLimit=3&orderBy=date&primaryColour=%23000000&contrastText=%2300ff00'; var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();</script>
+
+    </section>
+    <div class="gif-container">
+        <img src="./gan_gen.gif" alt="generating drums">
+    </div>
+
+<!--     <section class="content flicker-container"> 
+        <h2>Projects</h2>
+        <p>Here are some of my recent projects...</p>
+    </section>
+ -->
+    <footer>
+        <p>&copy; 2023 Jake Drysdale.</p>
+    </footer>
+    <script>
+        setTimeout(() => {
+            document.querySelectorAll('.flicker-container').forEach((element) => {
+                element.classList.add('stop-flicker');
+            });
+        },3000); // 3000 milliseconds = 3 seconds
+    </script>
+</body>
+</html>

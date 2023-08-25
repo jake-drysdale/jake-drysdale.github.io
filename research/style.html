@@ -1,0 +1,52 @@
+<div class="project">
+
+    <section class="content content-with-spacing flicker-container">
+        <br>
+    	<h2 class="project-title"><center>Style-based Drum Synthesis with GAN Inversion</center></h2>
+        <p class="project-description"><br><br>Drysdale, J. and Tomczak, M. and J. Hockman. 2021. Style-based Drum Synthesis with GAN Inversion. In <em>Extended Abstracts for the Late-Breaking Demo Sessions of the 22nd International Society for Music Information Retrieval Conference (ISMIR)</em>, Online.
+        [<a href="https://archives.ismir.net/ismir2021/latebreaking/000041.pdf">paper</a>,
+        <a href="./lbd_posterv2.pdf">poster</a>]</p><br><br>
+
+		<div class="project-details hidden">
+        <!-- <h2>Improved Automatic Instrumentation Role Classification and Structural Analysis for Electronic Music Production</h2><br> -->
+        <!-- <br> -->
+
+        <br>
+        <p>Supplementary material accompanying the late-breaking demo: "Style-based Drum Synthesis with GAN Inversion" for the International Society for Music Information Retrieval (ISMIR).</p>
+
+        <h3>Abstract</h3>
+
+        <p>Neural audio synthesizers exploit deep learning as an alternative to traditional synthesizers that generate audio from hand-designed components such as oscillators and wavetables. For a neural audio synthesizer to be applicable to music creation, meaningful control over the output is essential. This paper provides an overview of an unsupervised approach to deriving useful feature controls learned by a generative model. A system for generation and transformation of drum samples using a style-based generative adversarial network (GAN) is proposed. The system provides functional control of style features of drum sounds based on principal component analysis (PCA) applied to the latent space. Additionally, we propose the use of an encoder trained to invert input drum sounds back to the latent space of the pre-trained GAN. We experiment with three modes of control and provide audio results on a supporting website.</p>
+
+        <!-- <img src="./training_fig.png" alt="training procedure"> -->
+
+        <h3>Code</h3>
+
+        <p>The GitHub repository for this project is available <a href="https://github.com/SoMA-group/stylegan-drumsynth">here</a>. The repo contains instructions for installation and usage for a TensorFlow implementation of the style-based drum synthesizer and audio inversion network.</p>
+
+        <h4>Usage demonstration</h4>
+
+        <p>Example usage within loop-based electronic music compositions. The percussive elements of the following tracks were created using a selection of samples from the generated data. A light amount of post-processing (equalization and volume envelope shaping) has been applied to mix the sounds.</p><br>
+
+        <figure>
+            <figcaption>Track 1: Hip hop demo</figcaption>
+            <audio controls src="./audio/hiphopdemo.wav"></audio>
+        </figure>
+
+        <figure>
+            <figcaption>Track 2: Drum and bass demo</figcaption>
+            <audio controls src="./audio/drumandbassdemo.wav"></audio>
+        </figure>
+
+        <figure>
+            <figcaption>Track 3: Breakbeat interpolation demo</figcaption>
+            <audio controls src="./audio/break-morphing.wav"></audio>
+        </figure>
+
+
+
+
+    </section>
+
+
+</div>

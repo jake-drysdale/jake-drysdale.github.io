@@ -8,7 +8,7 @@
     <script src="typing-animation.js"></script> <!-- Add the typing animation script -->
     <style>
         .flicker-container {
-            animation: flicker 1.5s linear infinite;
+            animation: flicker 2.5s linear infinite;
             animation-play-state: running;
         }
 
@@ -25,15 +25,12 @@
             animation-play-state: paused;
             opacity: 1; /* Set opacity to 1 when animation is paused */
         }
-        @media (max-width: 768px) { /* Adjust the max-width as needed */
-            #typing-title {
-                font-size: 25px; /* Adjust the font size as needed */
-            }
-        }
     </style>
+
 </head>
 <body>
-    <header>
+    <script src="typing-animation.js"></script> <!-- Add the typing animation script -->
+    <header class="header-container">
         <div class="container">
             <div class="typed-out" id="typing-title">Jake Drysdale // Drytek</div>
         </div>
@@ -43,6 +40,7 @@
                 <li><a href="tools.html">Production Tools</a></li>
                 <li><a href="research.html">Research</a></li>
                 <li><a href="music.html">Music</a></li>
+                <li><a href="events.html">Events</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -53,19 +51,19 @@
             border: 1px solid limegreen;
             border-radius: 5px;
             /*padding: 10px;*/
-            margin: 150px auto; /* Center the content horizontally */
+            margin: 200px auto; /* Center the content horizontally */
             max-width: 800px; /* Adjust the max width as needed */
         }
 
     </style>
-    <section class="content content-with-spacing flicker-container"> <!-- Add the flicker-container class here -->
+    <section class="content flicker-container"> <!-- Add the flicker-container class here -->
 
         <h2>About Me</h2>
         <p>
             <br>Hello, I’m Jake!<br><br>
             I work on audio and machine learning research with the aim to develop systems for enhancing the music production process and discovering new sounds.<br><br>
             My PhD thesis, titled “Deep Learning for Sample-based Music Production”, proposes deep learning-based systems for analysing electronic music and generating samples.<br><br>
-            Outside of research I create and perform music under the alias Drytek.
+            Outside of research I create music under the alias <a class="social-link" href="https://soundcloud.com/drytekofficial">Drytek</a> and promote music events as <a class="social-link" href="https://www.instagram.com/saturn_sound_/">Saturn Sound</a>.
         </p>
     </section>
     <div class="gif-container">
