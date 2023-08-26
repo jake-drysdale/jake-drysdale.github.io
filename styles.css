@@ -329,7 +329,7 @@ body.stop-flicker {
     height: 100%;
     background-size: cover;
     background-color: darkgreen; /* Set the dark green color */
-    opacity: 0.1; 
+    opacity: 0.14; 
     pointer-events: none; /* Allow interactions with elements behind the overlay */
     z-index: 1001;
 }
