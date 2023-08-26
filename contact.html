@@ -25,6 +25,30 @@
             animation-play-state: paused;
             opacity: 1; /* Set opacity to 1 when animation is paused */
         }
+        /* Style for the image container */
+        .image-container {
+            display: flex; 
+        }
+        /* Style for the images */
+        .image img {
+            width: 40%; /* Make the images fill the entire width of the .image div */
+            height: auto; /* Maintain the aspect ratio of the images */
+            transition: transform 0.2s ease;
+        }
+        /* Style for each image */
+        .image {
+            display: inline-block;
+            width: 100%; 
+            padding: 2px; /* Add some spacing between images */
+        }
+        .image:last-child {
+            margin-right: 0;
+        }
+        /* Apply the scaling effect when hovering over the image */
+        .image:hover img {
+            transform: scale(1.1); /* Increase the scale by 10% */
+        }
+
     </style>
 </head>
 <body>
@@ -50,7 +74,7 @@
             border-radius: 5px;
             /*padding: 10px;*/
             margin: 200px auto; /* Center the content horizontally */
-            max-width: 800px; /* Adjust the max width as needed */
+            max-width: 500px; /* Adjust the max width as needed */
         }
 
     </style>
@@ -65,10 +89,31 @@
             <br>
             <a class="contact-link" href="mailto:saturnsound.contact@gmail.com">Saturn Sound enquiries</a>
         </p>
+        <br><br>
+        <center>
+            <div class="image-container">
+                <div class="image">
+                    <a href="https://github.com/jake-drysdale">
+                        <img src="/icons/github.png" alt="GitHub">
+                    </a>
+                </div>
+                <div class="image">
+                    <a href="https://open.spotify.com/artist/5R09RZ9EqI3zhmWdRfKKN1?si=ikw-JfXiQ4uaffFhbD4P5Q&nd=1">
+                        <img src="/icons/spotify.png" alt="Spotify">
+                    </a>
+                </div>
+                <div class="image">
+                    <a href="https://soundcloud.com/drytekofficial">
+                        <img src="/icons/soundcloud.png" alt="SoundCloud">
+                    </a>
+                </div>
+            </div>
+        </center>
+
     </section>
-    <div class="gif-container">
+<!--     <div class="gif-container">
         <img src="./gan_gen.gif" alt="generating drums">
-    </div>
+    </div> -->
 
 <!--     <section class="content flicker-container"> 
         <h2>Projects</h2>
@@ -85,5 +130,7 @@
             });
         },3000); // 3000 milliseconds = 3 seconds
     </script>
+<div class="dark-green-overlay"></div>
+<div class="overlay"></div>
 </body>
 </html>
